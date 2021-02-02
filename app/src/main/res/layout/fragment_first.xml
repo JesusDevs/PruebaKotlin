@@ -11,19 +11,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
+        android:backgroundTint="#FFFFFF"
+        android:backgroundTintMode="src_atop"
         android:clickable="true"
+        android:src="@drawable/btn"
+        android:tint="#E8B7B7"
+        app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.554"
         app:layout_constraintStart_toStartOf="parent"
-        tools:src="@tools:sample/avatars" />
+        app:rippleColor="@color/purple_700"
+        tools:src="@drawable/btn" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvProduct"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="-65dp"
-        tools:layout_editor_absoluteY="68dp">
+        android:clipToPadding="false"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
     </androidx.recyclerview.widget.RecyclerView>
 

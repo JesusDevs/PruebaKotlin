@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pruebakotlin.databinding.FragmentFirstBinding
@@ -31,21 +32,41 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter= ProductoAdapter()
-        binding.rvProduct.adapter = adapter
-        binding.rvProduct.layoutManager= LinearLayoutManager(context)
 
+        //instaniar adapter
+        val adapter = ProductoAdapter()
+        binding.rvProduct.adapter = adapter
+        binding.rvProduct.layoutManager = LinearLayoutManager(context)
+       val product1=Product(1,"name",200,2,4000)
+       val product0= Product(4,"papas",2000,3,3500)
+        val product2=Product(2,"name",200,2,4000)
+        val product3=Product(3,"name",200,2,4000)
+        viewModel.insertProducto(product1)
+        viewModel.insertProducto(product2)
+        viewModel.insertProducto(product3)
+        viewModel.insertProducto(product0)
+        
+        // observando objeto expuesto en viewmodel
+        viewModel.allProduct.observe(viewLifecycleOwner, Observer {
+        adapter.update(it)
+       })
+
+
+        adapter.selectItem().observe(viewLifecycleOwner) {
+            it?.let {
+                viewModel.selectedItem()
+            }
+        }
 
         binding.fab.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+           findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
+    }
+    fun llenarlista(){
 
-        adapter.selectItem().observe(viewLifecycleOwner){
-            it?.let{
-                viewModel.selectedItem()
-                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-            }}
-        }
-        }
+    }
+}
+
+
 
 

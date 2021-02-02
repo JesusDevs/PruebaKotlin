@@ -24,10 +24,10 @@ class ProductoAdapter : RecyclerView.Adapter<ProductoAdapter.ProductVH>() {
             RecyclerView.ViewHolder(binding.root), View.OnClickListener{
 
                 fun bind (product: Product) {
-                    binding.edTotal.setText(product.total.toString())
-                    binding.nameProduct.setText(product.item.toString())
-                    binding.priceProducto.setText(product.itemPrice.toString())
-                    binding.cantidad.setText(product.quantity.toString())
+                    binding.edTotal.text = product.total.toString()
+                    binding.nameProduct.text = product.item.toString()
+                    binding.priceProducto.text= product.itemPrice.toString()
+                    binding.cantidad.text = product.quantity.toString()
                     itemView.setOnClickListener(this)
                 }
 
@@ -37,7 +37,7 @@ class ProductoAdapter : RecyclerView.Adapter<ProductoAdapter.ProductVH>() {
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductVH {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductoAdapter.ProductVH {
         return ProductVH(ProductoItemBinding.inflate
         (LayoutInflater.from(parent.context)))
     }

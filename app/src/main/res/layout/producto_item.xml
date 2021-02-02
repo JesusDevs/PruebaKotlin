@@ -2,71 +2,71 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/producto_item_scene">
 
-    <EditText
+    <TextView
         android:id="@+id/edTotal"
-        android:layout_width="139dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="204dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginBottom="72dp"
-        android:ems="10"
-        android:hint="Total"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/cantidad"
-        android:layout_width="158dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="164dp"
-        android:layout_marginEnd="32dp"
-        android:ems="10"
-        android:hint="Cantidad"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/nameProduct"
-        android:layout_width="155dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="78dp"
-        android:layout_marginBottom="11dp"
-        android:ems="10"
-        android:hint="Producto"
-        android:inputType="textPersonName"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="36dp"
+        android:text="Total"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/priceProducto"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/cantidad" />
 
-    <EditText
-        android:id="@+id/priceProducto"
-        android:layout_width="147dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="11dp"
-        android:ems="10"
-        android:hint="Precio $ "
-        android:inputType="textPersonName"
+    <TextView
+        android:id="@+id/cantidad"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="36dp"
+        android:text="Cantidad"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameProduct" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+    <TextView
+        android:id="@+id/priceProducto"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="36dp"
+        android:text="Precio"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTotal" />
+
+    <TextView
+        android:id="@+id/nameProduct"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="26dp"
+        android:text="Producto"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/cantidad"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="11dp" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="177dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="1dp"
+        android:adjustViewBounds="true"
+        android:background="#051D30"
+        android:contentDescription="TODO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/edTotal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cho"
+        tools:srcCompat="@android:drawable/divider_horizontal_dark" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,7 +13,6 @@ class ProductoRepository(private val productosDao: ProductosDao) {
         productosDao.insertProducto(product)
     }
 
-    //fun que elimina un producto
     suspend fun deleteProducto(product: Product) {
         productosDao.deleteProduct(product)
     }

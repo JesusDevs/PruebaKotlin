@@ -11,9 +11,16 @@ interface ProductosDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertProducto(product: Product)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAllProductos (taskList: List<Product>)
+
+
     //live realiza la asincronia del objeto o accion
     @Query("SELECT * FROM productos_table")
      fun getAllConsumption(): LiveData<List<Product>>
+
+    @Query("SELECT * FROM productos_table WHERE id = :mId")
+    fun getProductoById(mId:Int):LiveData<Product>
 
 
     @Delete

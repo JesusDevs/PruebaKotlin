@@ -11,8 +11,8 @@ data class Product(
         @PrimaryKey(autoGenerate = true)
         val id: Int = 0,
         val item: String,
-        val itemPrice: Int =0,
+        val itemPrice: Int ,
         val quantity: Int,
-        val total: Int = 0)
+        val total: Int )
 
 

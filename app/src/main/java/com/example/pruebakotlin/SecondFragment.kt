@@ -35,9 +35,9 @@ class SecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.selectedItem().observe(viewLifecycleOwner, {
            binding.nameProduct2.setText(it.item)
-            binding.cantidad2.setText(it.quantity.toString())
-            binding.priceProducto2.setText(it.itemPrice.toString())
-            binding.editTextTextPersonName.setText(it.total.toString())
+            binding.cantidad2.setText(it.quantity.toString().toInt())
+            binding.priceProducto2.setText(it.itemPrice.toString().toInt())
+            binding.editTextTextPersonName.setText(it.total.toString().toInt())
 
             idProduct = it.id
             productSelected=it
@@ -48,16 +48,16 @@ class SecondFragment : Fragment() {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
 
         }
+
         }
 
 
     fun saveData() {
         val product = binding.nameProduct2.text.toString()
-        val  cantidad = binding.cantidad2.text.toString().toInt()
+        val  cantidad = binding.cantidad2.text.toString()
         val precio = binding.priceProducto2.text.toString().toInt()
         val total = binding.editTextTextPersonName.text.toString().toInt()
 
-        val product1 = Product(1,"chela",2000,2,4000)
-        viewModel.insertProducto(product1)
+
     }
     }
